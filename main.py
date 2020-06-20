@@ -208,23 +208,23 @@ def runStrategies():
         },
     }
 
-    for symbol in symbols:
-        Process(
-            target=priceCrossover,
-            args=(
-                symbol,
-                intradayInterval,
-                function,
-                interval,
-                timePeriod,
-                apiKey,
-                userData,
-                stopLoss,
-                takeProfit,
-            ),
-        ).start()
-        print(userData)
-        print("\n")
+    # for symbol in symbols:
+    #     Process(
+    #         target=priceCrossover,
+    #         args=(
+    #             symbol,
+    #             intradayInterval,
+    #             function,
+    #             interval,
+    #             timePeriod,
+    #             apiKey,
+    #             userData,
+    #             stopLoss,
+    #             takeProfit,
+    #         ),
+    #     ).start()
+    #     print(userData)
+    #     print("\n")
 
 
 runStrategies()
