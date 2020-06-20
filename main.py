@@ -9,7 +9,6 @@ from priceCrossover import priceCrossover
 load_dotenv()
 
 
-
 def runStrategies():
     symbols = ["M", "AAL"]
     apiKey = os.environ.get("alphaVantageApiKey")
@@ -64,4 +63,5 @@ def runStrategies():
         print("\n")
 
 
-runStrategies()
+if __name__ == "__main__":
+    runStrategies()
