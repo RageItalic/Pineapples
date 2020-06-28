@@ -45,6 +45,7 @@ def runStrategies():
         },
     }
 
+
     for symbol in symbols:
         Process(
             target=priceCrossover,
@@ -63,5 +64,5 @@ def runStrategies():
         print(userData)
         print("\n")
 
-
-runStrategies()
+if __name__ == '__main__':
+    runStrategies()
