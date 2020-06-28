@@ -1,6 +1,6 @@
 import time
 from sendSMS import sendSMS
-from currentLowPrice import getCurrentLowPrice
+from currentPrice import getCurrentPrice
 
 
 def trackAndTrade(
@@ -16,7 +16,7 @@ def trackAndTrade(
     while True:
         currentLowPrice = 0
         if count > 0:
-            currentLowPrice = getCurrentLowPrice(symbol, intradayInterval, apiKey)
+            currentLowPrice = getCurrentPrice(symbol, intradayInterval , "3. low", apiKey)
         else:
             currentLowPrice = initialCurrentLowPrice
             count += 1

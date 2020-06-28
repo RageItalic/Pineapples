@@ -1,4 +1,4 @@
-from currentLowPrice import getCurrentLowPrice
+from currentPrice import getCurrentPrice
 from sma import getSMA
 from trackAndTrade import trackAndTrade
 from sendSMS import sendSMS
@@ -16,7 +16,7 @@ def priceCrossover(
     stopLoss,
     takeProfit,
 ):
-    currentLowPrice = getCurrentLowPrice(symbol, intradayInterval, apiKey)
+    currentLowPrice = getCurrentPrice(symbol, intradayInterval, "3. low", apiKey)
     print(
         "Checking to see if current low price is higher than last weeks average to ensure rising price..."
     )
