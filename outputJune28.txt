@@ -1,0 +1,1136 @@
+Last login: Tue Dec 31 19:01:59 on ttys000
+
+The default interactive shell is now zsh.
+To update your account to use zsh, please run `chsh -s /bin/zsh`.
+For more details, please visit https://support.apple.com/kb/HT208050.
+KaiXuans-MBP:~ kaixuanchin$ cd Desktop/
+KaiXuans-MBP:Desktop kaixuanchin$ cd Pineapples/
+KaiXuans-MBP:Pineapples kaixuanchin$ ls
+README.md		currentPrice.py		sendSMS.py
+__pycache__		main.py			sma.py
+bband.py		priceCrossover.py	trackAndTrade.py
+KaiXuans-MBP:Pineapples kaixuanchin$ python3 bband.py
+date 2020-06-26 16:00
+Upper_band: 357.6674 
+Lower_band: 353.1987 
+Middle_band : 355.433
+Current close price : 353.69 
+Previous close price : 353.69
+Down Trend : True 
+Up Trend : False
+Changed Trend:  False
+Buy now
+Buy at 353.69
+
+date 2020-06-26 16:00
+Upper_band: 357.6674 
+Lower_band: 353.1987 
+Middle_band : 355.433
+Traceback (most recent call last):
+  File "bband.py", line 139, in <module>
+    runThis()
+  File "bband.py", line 134, in runThis
+    bband()
+  File "bband.py", line 42, in bband
+    currentClosePrice = getCurrentPrice(symbol, interval , "4. close" , api_key)
+  File "/Users/kaixuanchin/Desktop/Pineapples/currentPrice.py", line 8, in getCurrentPrice
+    intradayObj = json.loads(intraday.content.decode("utf-8"))
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/json/__init__.py", line 357, in loads
+    return _default_decoder.decode(s)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+KaiXuans-MBP:Pineapples kaixuanchin$ python3 bband.py
+date 2020-06-26 16:00
+Upper_band: 357.6674 
+Lower_band: 353.1987 
+Middle_band : 355.433
+Current close price : 353.69 
+Previous close price : 353.69
+Down Trend : True 
+Up Trend : False
+Changed Trend:  False
+Buy now
+Buy at 353.69
+
+date 2020-06-26 16:00
+Upper_band: 357.6674 
+Lower_band: 353.1987 
+Middle_band : 355.433
+Current close price : 353.69 
+Previous close price : 353.69
+Down Trend : True 
+Up Trend : False
+Changed Trend:  False
+Buy now
+Buy at 353.69
+
+^CTraceback (most recent call last):
+  File "bband.py", line 139, in <module>
+    runThis()
+  File "bband.py", line 135, in runThis
+    time.sleep(330)
+KeyboardInterrupt
+
+KaiXuans-MBP:Pineapples kaixuanchin$ python3 bband.py
+date 2020-06-26 16:00
+Upper_band: 357.6674 
+Lower_band: 353.1987 
+Middle_band : 355.433
+^CTraceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/requests/packages/urllib3/connectionpool.py", line 372, in _make_request
+    httplib_response = conn.getresponse(buffering=True)
+TypeError: getresponse() got an unexpected keyword argument 'buffering'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "bband.py", line 139, in <module>
+    runThis()
+  File "bband.py", line 134, in runThis
+    bband()
+  File "bband.py", line 42, in bband
+    currentClosePrice = getCurrentPrice(symbol, interval , "4. close" , api_key)
+  File "/Users/kaixuanchin/Desktop/Pineapples/currentPrice.py", line 7, in getCurrentPrice
+    intraday = get(intradayUrl)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/requests/api.py", line 68, in get
+    return request('get', url, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/requests/api.py", line 50, in request
+    response = session.request(method=method, url=url, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/requests/sessions.py", line 464, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/requests/sessions.py", line 576, in send
+    r = adapter.send(request, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/requests/adapters.py", line 360, in send
+    resp = conn.urlopen(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/requests/packages/urllib3/connectionpool.py", line 542, in urlopen
+    httplib_response = self._make_request(conn, method, url,
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/requests/packages/urllib3/connectionpool.py", line 374, in _make_request
+    httplib_response = conn.getresponse()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/http/client.py", line 1322, in getresponse
+    response.begin()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/http/client.py", line 303, in begin
+    version, status, reason = self._read_status()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/http/client.py", line 264, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/socket.py", line 669, in readinto
+    return self._sock.recv_into(b)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/ssl.py", line 1241, in recv_into
+    return self.read(nbytes, buffer)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/ssl.py", line 1099, in read
+    return self._sslobj.read(len, buffer)
+KeyboardInterrupt
+
+KaiXuans-MBP:Pineapples kaixuanchin$ python3 bband.py
+date 2020-06-29 09:50
+Upper_band: 118.1192 
+Lower_band: 116.4883 
+Middle_band : 117.3037
+Current close price : 117.7421 
+Previous close price : 117.7421
+Down Trend : False 
+Up Trend : True
+Changed Trend:  False
+Upper band range:  0.0031925377076716813
+Not in the selling range yet 
+date 2020-06-29 09:55
+Upper_band: 118.251 
+Lower_band: 116.6592 
+Middle_band : 117.4551
+Current close price : 118.1038 
+Previous close price : 118.1038
+Down Trend : False 
+Up Trend : True
+Changed Trend:  False
+Upper band range:  0.0012448097690505619
+You dont hold any stock
+Traceback (most recent call last):
+  File "bband.py", line 139, in <module>
+    runThis()
+  File "bband.py", line 134, in runThis
+    bband()
+  File "bband.py", line 22, in bband
+    bbandObj  = json.loads(allbbandprice.content.decode("utf-8"))
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/json/__init__.py", line 357, in loads
+    return _default_decoder.decode(s)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+KaiXuans-MBP:Pineapples kaixuanchin$ python3 bband.py
+date 2020-06-29 10:25
+Upper_band: 118.8633 
+Lower_band: 117.3115 
+Middle_band : 118.0874
+Current close price : 118.5909 
+Previous close price : 118.5909
+Down Trend : False 
+Up Trend : True
+Changed Trend:  False
+Upper band range:  0.002291708205981076
+Not in the selling range yet 
+
+Traceback (most recent call last):
+  File "bband.py", line 139, in <module>
+    runThis()
+  File "bband.py", line 134, in runThis
+    bband()
+  File "bband.py", line 22, in bband
+    bbandObj  = json.loads(allbbandprice.content.decode("utf-8"))
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/json/__init__.py", line 357, in loads
+    return _default_decoder.decode(s)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+KaiXuans-MBP:Pineapples kaixuanchin$ python3 bband.py
+date 2020-06-29 10:45
+Upper_band: 119.1202 
+Lower_band: 117.9209 
+Middle_band : 118.5206
+Current close price : 118.95 
+Previous close price : 118.95
+Down Trend : False 
+Up Trend : True
+Changed Trend:  False
+Upper band range:  0.0014288088837996757
+You dont hold any stock
+
+date 2020-06-29 10:50
+Upper_band: 119.1252 
+Lower_band: 118.0897 
+Middle_band : 118.6075
+Current close price : 118.936 
+Previous close price : 118.936
+Down Trend : False 
+Up Trend : True
+Changed Trend:  False
+Upper band range:  0.001588244972516307
+You dont hold any stock
+
+date 2020-06-29 10:55
+Upper_band: 119.247 
+Lower_band: 118.1563 
+Middle_band : 118.7016
+Current close price : 118.97 
+Previous close price : 118.97
+Down Trend : False 
+Up Trend : True
+Changed Trend:  False
+Upper band range:  0.0023229095910169734
+Not in the selling range yet 
+
+date 2020-06-29 11:00
+Upper_band: 119.248 
+Lower_band: 118.2806 
+Middle_band : 118.7643
+Current close price : 118.83 
+Previous close price : 118.83
+Down Trend : False 
+Up Trend : True
+Changed Trend:  False
+Upper band range:  0.003505299879243311
+Not in the selling range yet 
+
+date 2020-06-29 11:05
+Upper_band: 119.2519 
+Lower_band: 118.3793 
+Middle_band : 118.8156
+Current close price : 118.95 
+Previous close price : 118.95
+Down Trend : False 
+Up Trend : True
+Changed Trend:  False
+Upper band range:  0.00253161584846869
+Not in the selling range yet 
+
+date 2020-06-29 11:10
+Upper_band: 119.2662 
+Lower_band: 118.483 
+Middle_band : 118.8746
+Current close price : 119.07 
+Previous close price : 119.07
+Down Trend : False 
+Up Trend : True
+Changed Trend:  False
+Upper band range:  0.0016450595390815218
+You dont hold any stock
+
+date 2020-06-29 11:15
+Upper_band: 119.2452 
+Lower_band: 118.5578 
+Middle_band : 118.9015
+Current close price : 118.84 
+Previous close price : 118.84
+Down Trend : True 
+Up Trend : False
+Changed Trend:  False
+not a good time to buy
+
+date 2020-06-29 11:20
+Upper_band: 119.2036 
+Lower_band: 118.6324 
+Middle_band : 118.918
+Current close price : 118.715 
+Previous close price : 118.715
+Down Trend : True 
+Up Trend : False
+Changed Trend:  False
+Buy now
+Buy at 118.715
+
+date 2020-06-29 11:25
+Upper_band: 119.1777 
+Lower_band: 118.7193 
+Middle_band : 118.9485
+Current close price : 118.96 
+Previous close price : 118.96
+Down Trend : False 
+Up Trend : True
+Changed Trend:  False
+Upper band range:  0.0018266840189062868
+You dont hold any stock
+
+date 2020-06-29 11:35
+Upper_band: 119.2964 
+Lower_band: 118.6716 
+Middle_band : 118.984
+Current close price : 119.29 
+Previous close price : 119.29
+Down Trend : False 
+Up Trend : True
+Changed Trend:  False
+Upper band range:  5.364788878792063e-05
+You dont hold any stock
+
+Traceback (most recent call last):
+  File "bband.py", line 139, in <module>
+    if __name__ == '__main__':
+  File "bband.py", line 134, in runThis
+    while True:
+  File "bband.py", line 22, in bband
+    bbandObj  = json.loads(allbbandprice.content.decode("utf-8"))
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/json/__init__.py", line 357, in loads
+    return _default_decoder.decode(s)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+KaiXuans-MBP:Pineapples kaixuanchin$ python3 bband.py
+date 2020-06-29 11:45
+Upper_band: 119.3221 
+Lower_band: 118.6769 
+Middle_band : 118.9995
+Current close price : 119.155 
+Previous close price : 119.155
+Down Trend : False 
+Up Trend : True
+Changed Trend:  False
+Upper band range:  0.00140041115602227
+You dont hold any stock
+
+^CTraceback (most recent call last):
+  File "bband.py", line 140, in <module>
+    runThis()
+  File "bband.py", line 136, in runThis
+    time.sleep(330)
+KeyboardInterrupt
+
+KaiXuans-MBP:Pineapples kaixuanchin$ python3 bband.py
+date 2020-06-29 11:45
+Upper_band: 119.3221 
+Lower_band: 118.6769 
+Middle_band : 118.9995
+Current close price : 119.155 
+Previous close price : 119.155
+Down Trend : False 
+Up Trend : True
+Changed Trend:  False
+Upper band range:  0.00140041115602227
+You dont hold any stock
+
+^CTraceback (most recent call last):
+  File "bband.py", line 140, in <module>
+    
+  File "bband.py", line 136, in runThis
+    bband()
+KeyboardInterrupt
+
+KaiXuans-MBP:Pineapples kaixuanchin$ python3 bband.py
+date 2020-06-29 11:50
+Upper_band: 119.3336 
+Lower_band: 118.6845 
+Middle_band : 119.009
+Current close price : 119.07 
+Previous close price : 119.07
+Down Trend : False 
+Up Trend : True
+Changed Trend:  False
+Upper band range:  0.0022089336113216306
+Not in the selling range yet 
+
+now = 2020-06-29 11:50:07.702006
+^CTraceback (most recent call last):
+  File "bband.py", line 143, in <module>
+    runThis()
+  File "bband.py", line 139, in runThis
+    time.sleep(330)
+KeyboardInterrupt
+
+KaiXuans-MBP:Pineapples kaixuanchin$ python3 bband.py
+date 2020-06-29 11:50
+Upper_band: 119.3393 
+Lower_band: 118.6847 
+Middle_band : 119.012
+Current close price : 119.1 
+Previous close price : 119.1
+Down Trend : False 
+Up Trend : True
+Changed Trend:  False
+Upper band range:  0.002005207002219722
+Not in the selling range yet
+now = 2020-06-29 11:51:08.788461 
+
+date 2020-06-29 11:55
+Upper_band: 119.3399 
+Lower_band: 118.7271 
+Middle_band : 119.0335
+Current close price : 119.05 
+Previous close price : 119.05
+Down Trend : False 
+Up Trend : True
+Changed Trend:  False
+Upper band range:  0.002429195935307495
+Not in the selling range yet
+now = 2020-06-29 11:56:39.510470 
+
+date 2020-06-29 12:00
+Upper_band: 119.3404 
+Lower_band: 118.7026 
+Middle_band : 119.0215
+Current close price : 118.92 
+Previous close price : 118.92
+Down Trend : True 
+Up Trend : False
+Changed Trend:  False
+Lower band range: 0.0018314678869712864
+Buy now
+Buy at 118.92
+now = 2020-06-29 12:02:13.317888 
+
+date 2020-06-29 12:05
+Upper_band: 119.3454 
+Lower_band: 118.7143 
+Middle_band : 119.0298
+Current close price : 119.04 
+Previous close price : 119.04
+Down Trend : False 
+Up Trend : True
+Changed Trend:  False
+Upper band range:  0.002558959122010498
+Not in the selling range yet
+now = 2020-06-29 12:07:46.035784 
+
+date 2020-06-29 12:10
+Upper_band: 119.2742 
+Lower_band: 118.8718 
+Middle_band : 119.073
+Current close price : 119.03 
+Previous close price : 119.03
+Down Trend : True 
+Up Trend : False
+Changed Trend:  False
+Lower band range: 0.0013308454991007783
+Buy now
+Buy at 119.03
+now = 2020-06-29 12:13:17.696428 
+
+date 2020-06-29 12:15
+Upper_band: 119.2701 
+Lower_band: 118.9039 
+Middle_band : 119.087
+Current close price : 119.09 
+Previous close price : 119.09
+Down Trend : False 
+Up Trend : True
+Changed Trend:  False
+Upper band range:  0.0015100180179273425
+You dont hold any stock
+now = 2020-06-29 12:18:48.542794 
+
+^CTraceback (most recent call last):
+  File "bband.py", line 143, in <module>
+    if __name__ == '__main__':
+  File "bband.py", line 139, in runThis
+    print(f"now = {now} \n")
+KeyboardInterrupt
+
+KaiXuans-MBP:Pineapples kaixuanchin$ python3 bband.py
+date 2020-06-29 12:20
+Upper_band: 119.2708 
+Lower_band: 118.9052 
+Middle_band : 119.088
+Current close price : 119.08 
+Previous close price : 119.08
+Down Trend : True 
+Up Trend : False
+Changed Trend:  False
+Lower band range: 0.001470078684531919
+Buy now
+Buy at 119.08
+now = 2020-06-29 12:21:22.459251 
+
+^CTraceback (most recent call last):
+  File "bband.py", line 144, in <module>
+    
+  File "bband.py", line 140, in runThis
+    now = datetime.now()
+KeyboardInterrupt
+
+KaiXuans-MBP:Pineapples kaixuanchin$ python3 bband.py
+date 2020-06-29 12:20
+Upper_band: 119.3117 
+Lower_band: 118.8983 
+Middle_band : 119.105
+Current close price : 119.25 
+Previous close price : 119.25
+Down Trend : False 
+Up Trend : True
+Changed Trend:  False
+Upper band range:  0.0005171328545314656
+You dont hold any stock
+now = 2020-06-29 12:23:07.380078 
+
+date 2020-06-29 12:25
+Upper_band: 119.3159 
+Lower_band: 118.9041 
+Middle_band : 119.11
+Current close price : 119.3 
+Previous close price : 119.3
+Down Trend : False 
+Up Trend : True
+Changed Trend:  False
+Upper band range:  0.00013325969129011325
+You dont hold any stock
+now = 2020-06-29 12:28:38.187256 
+
+date 2020-06-29 12:30
+Upper_band: 119.3659 
+Lower_band: 118.8983 
+Middle_band : 119.1321
+Current close price : 119.3009 
+Previous close price : 119.3009
+Down Trend : False 
+Up Trend : True
+Changed Trend:  False
+Upper band range:  0.0005445441285995224
+You dont hold any stock
+now = 2020-06-29 12:34:10.808990 
+
+date 2020-06-29 12:35
+Upper_band: 119.3896 
+Lower_band: 118.8926 
+Middle_band : 119.1411
+Current close price : 119.28 
+Previous close price : 119.28
+Down Trend : False 
+Up Trend : True
+Changed Trend:  False
+Upper band range:  0.000918002908126004
+You dont hold any stock
+now = 2020-06-29 12:39:41.643464 
+
+date 2020-06-29 12:45
+Upper_band: 119.419 
+Lower_band: 118.9252 
+Middle_band : 119.1721
+Current close price : 119.2 
+Previous close price : 119.2
+Down Trend : False 
+Up Trend : True
+Changed Trend:  False
+Upper band range:  0.001833879030974921
+You dont hold any stock
+now = 2020-06-29 12:45:16.198744 
+
+date 2020-06-29 12:50
+Upper_band: 119.41 
+Lower_band: 119.0166 
+Middle_band : 119.2133
+Current close price : 119.2471 
+Previous close price : 119.2471
+Down Trend : False 
+Up Trend : True
+Changed Trend:  False
+Upper band range:  0.0013642073528179666
+You dont hold any stock
+now = 2020-06-29 12:50:48.847846 
+
+date 2020-06-29 12:55
+Upper_band: 119.4256 
+Lower_band: 119.0766 
+Middle_band : 119.2511
+Current close price : 119.32 
+Previous close price : 119.32
+Down Trend : False 
+Up Trend : True
+Changed Trend:  False
+Upper band range:  0.0008842325263595886
+You dont hold any stock
+now = 2020-06-29 12:56:19.639282 
+
+date 2020-06-29 13:00
+Upper_band: 119.4042 
+Lower_band: 119.121 
+Middle_band : 119.2626
+Current close price : 119.17 
+Previous close price : 119.17
+Down Trend : True 
+Up Trend : False
+Changed Trend:  False
+Lower band range: 0.00041134644605070976
+Buy now
+Buy at 119.17
+stock hold: True
+now = 2020-06-29 13:01:50.440714 
+
+date 2020-06-29 13:05
+Upper_band: 119.3633 
+Lower_band: 119.1939 
+Middle_band : 119.2786
+Current close price : 119.25 
+Previous close price : 119.25
+Down Trend : True 
+Up Trend : False
+Changed Trend:  False
+Lower band range: 0.00047066166976666345
+Buy now
+Buy at 119.25
+stock hold: True
+now = 2020-06-29 13:07:24.947978 
+
+date 2020-06-29 13:10
+Upper_band: 119.3633 
+Lower_band: 119.1939 
+Middle_band : 119.2786
+Current close price : 119.25 
+Previous close price : 119.25
+Down Trend : True 
+Up Trend : False
+Changed Trend:  False
+Lower band range: 0.00047066166976666345
+Buy now
+Buy at 119.25
+stock hold: True
+now = 2020-06-29 13:12:55.744841 
+
+date 2020-06-29 13:15
+Upper_band: 119.3615 
+Lower_band: 119.1937 
+Middle_band : 119.2776
+Current close price : 119.29 
+Previous close price : 119.29
+Down Trend : False 
+Up Trend : True
+Changed Trend:  False
+Upper band range:  0.000599020622227438
+You dont hold any stock
+now = 2020-06-29 13:18:28.328427 
+
+date 2020-06-29 13:20
+Upper_band: 119.3733 
+Lower_band: 119.1957 
+Middle_band : 119.2845
+Current close price : 119.34 
+Previous close price : 119.34
+Down Trend : False 
+Up Trend : True
+Changed Trend:  False
+Upper band range:  0.0002789568521603826
+You dont hold any stock
+now = 2020-06-29 13:23:59.191412 
+
+date 2020-06-29 13:25
+Upper_band: 119.375 
+Lower_band: 119.196 
+Middle_band : 119.2855
+Current close price : 119.305 
+Previous close price : 119.305
+Down Trend : False 
+Up Trend : True
+Changed Trend:  False
+Upper band range:  0.0005863874345549166
+You dont hold any stock
+now = 2020-06-29 13:29:32.971108 
+
+date 2020-06-29 13:35
+Upper_band: 119.3791 
+Lower_band: 119.1459 
+Middle_band : 119.2625
+Current close price : 119.16 
+Previous close price : 119.16
+Down Trend : True 
+Up Trend : False
+Changed Trend:  False
+Lower band range: 0.0001183423013297068
+Buy now
+Buy at 119.16
+stock hold: True
+now = 2020-06-29 13:35:08.527195 
+
+^CTraceback (most recent call last):
+  File "bband.py", line 146, in <module>
+    time.sleep(330)
+  File "bband.py", line 142, in runThis
+    if returnResult == true: 
+KeyboardInterrupt
+
+KaiXuans-MBP:Pineapples kaixuanchin$ python3 bband.py
+  File "bband.py", line 125
+    return stockHold 
+    ^
+SyntaxError: 'return' outside function
+KaiXuans-MBP:Pineapples kaixuanchin$ python3 bband.py
+date 2020-06-29 13:35
+Upper_band: 119.3868 
+Lower_band: 119.1422 
+Middle_band : 119.2645
+Current close price : 119.16 
+Previous close price : 119.16
+Down Trend : True 
+Up Trend : False
+Changed Trend:  False
+Lower band range: 0.00014940130365222434
+Buy now
+Buy at 119.16
+stock hold: True
+now = 2020-06-29 13:38:52.351316 
+
+Traceback (most recent call last):
+  File "bband.py", line 150, in <module>
+    runThis()
+  File "bband.py", line 142, in runThis
+    if returnResult == true: 
+NameError: name 'true' is not defined
+KaiXuans-MBP:Pineapples kaixuanchin$ python3 bband.py
+date 2020-06-29 13:35
+Upper_band: 119.3868 
+Lower_band: 119.1422 
+Middle_band : 119.2645
+Current close price : 119.16 
+Previous close price : 119.16
+Down Trend : True 
+Up Trend : False
+Changed Trend:  False
+Lower band range: 0.00014940130365222434
+Buy now
+Buy at 119.16
+stock hold: True
+now = 2020-06-29 13:39:10.885909 
+
+^CTraceback (most recent call last):
+  File "bband.py", line 150, in <module>
+    runThis()
+  File "bband.py", line 146, in runThis
+    time.sleep(330)
+KeyboardInterrupt
+
+KaiXuans-MBP:Pineapples kaixuanchin$ python3 bband.py
+now = 2020-06-29 13:39:48.764577 
+
+date 2020-06-29 13:35
+Upper_band: 119.3868 
+Lower_band: 119.1422 
+Middle_band : 119.2645
+Current close price : 119.16 
+Previous close price : 119.16
+Down Trend : True 
+Up Trend : False
+Changed Trend:  False
+Lower band range: 0.00014940130365222434
+Buy now
+Buy at 119.16
+stock hold: True
+now = 2020-06-29 13:45:19.753598 
+
+date 2020-06-29 13:45
+Upper_band: 119.4058 
+Lower_band: 119.1375 
+Middle_band : 119.2717
+Current close price : 119.3316 
+Previous close price : 119.3316
+Down Trend : False 
+Up Trend : True
+Changed Trend:  False
+Upper band range:  0.0006214103502510323
+Sell Now
+sell at 119.3316
+stock hold: False
+now = 2020-06-29 13:50:51.076648 
+
+date 2020-06-29 13:50
+Upper_band: 119.3975 
+Lower_band: 119.1589 
+Middle_band : 119.2782
+Current close price : 119.235 
+Previous close price : 119.235
+Down Trend : True 
+Up Trend : False
+Changed Trend:  False
+Lower band range: 0.0006386430220486823
+You are holding stock now
+^CTraceback (most recent call last):
+  File "bband.py", line 150, in <module>
+    runThis()
+  File "bband.py", line 146, in runThis
+    time.sleep(330)
+KeyboardInterrupt
+
+KaiXuans-MBP:Pineapples kaixuanchin$ python3 bband.py
+now = 2020-06-29 13:56:11.838650 
+
+date 2020-06-29 13:55
+Upper_band: 119.393 
+Lower_band: 119.1533 
+Middle_band : 119.2732
+Current close price : 119.225 
+Previous close price : 119.225
+Down Trend : True 
+Up Trend : False
+Changed Trend:  False
+Lower band range: 0.0006017458182022048
+Buy now
+Buy at 119.225
+stock hold: True
+now = 2020-06-29 14:01:45.080877 
+
+date 2020-06-29 14:00
+Upper_band: 119.4 
+Lower_band: 119.1293 
+Middle_band : 119.2647
+Current close price : 119.17 
+Previous close price : 119.17
+Down Trend : True 
+Up Trend : False
+Changed Trend:  False
+Lower band range: 0.00034164559012771055
+You are holding stock now
+now = 2020-06-29 14:07:15.972932 
+
+date 2020-06-29 14:05
+Upper_band: 119.395 
+Lower_band: 119.1164 
+Middle_band : 119.2557
+Current close price : 119.2 
+Previous close price : 119.2
+Down Trend : True 
+Up Trend : False
+Changed Trend:  False
+Lower band range: 0.0007018345080946378
+You are holding stock now
+now = 2020-06-29 14:12:49.010297 
+
+date 2020-06-29 14:10
+Upper_band: 119.4085 
+Lower_band: 119.0288 
+Middle_band : 119.2187
+Current close price : 119.0 
+Previous close price : 119.0
+Down Trend : False 
+Up Trend : False
+Changed Trend:  True
+now = 2020-06-29 14:18:19.873178 
+
+date 2020-06-29 14:15
+Upper_band: 119.3878 
+Lower_band: 119.0166 
+Middle_band : 119.2022
+Current close price : 119.14 
+Previous close price : 119.14
+Down Trend : True 
+Up Trend : False
+Changed Trend:  False
+Lower band range: 0.0010368301564656001
+You are holding stock now
+now = 2020-06-29 14:23:50.826990 
+
+date 2020-06-29 14:20
+Upper_band: 119.3913 
+Lower_band: 119.0174 
+Middle_band : 119.2044
+Current close price : 119.2421 
+Previous close price : 119.2421
+Down Trend : False 
+Up Trend : True
+Changed Trend:  False
+Upper band range:  0.001249672296055136
+Sell Now
+sell at 119.2421
+stock hold: False
+now = 2020-06-29 14:29:21.583966 
+
+date 2020-06-29 14:25
+Upper_band: 119.393 
+Lower_band: 119.0227 
+Middle_band : 119.2079
+Current close price : 119.2 
+Previous close price : 119.2
+Down Trend : True 
+Up Trend : False
+Changed Trend:  False
+Lower band range: 0.0014896318097304335
+Buy now
+Buy at 119.2
+stock hold: True
+now = 2020-06-29 14:34:53.270166 
+
+date 2020-06-29 14:30
+Upper_band: 119.359 
+Lower_band: 118.9998 
+Middle_band : 119.1794
+Current close price : 119.06 
+Previous close price : 119.06
+Down Trend : True 
+Up Trend : False
+Changed Trend:  False
+Lower band range: 0.0005058832031651223
+You are holding stock now
+now = 2020-06-29 14:40:24.285024 
+
+date 2020-06-29 14:40
+Upper_band: 119.2877 
+Lower_band: 118.9987 
+Middle_band : 119.1432
+Current close price : 119.12 
+Previous close price : 119.12
+Down Trend : True 
+Up Trend : False
+Changed Trend:  False
+Lower band range: 0.0010193388667271582
+You are holding stock now
+now = 2020-06-29 14:45:55.525155 
+
+date 2020-06-29 14:45
+Upper_band: 119.2907 
+Lower_band: 118.9977 
+Middle_band : 119.1442
+Current close price : 119.22 
+Previous close price : 119.22
+Down Trend : False 
+Up Trend : True
+Changed Trend:  False
+Upper band range:  0.0005926698393085312
+Sell Now
+sell at 119.22
+stock hold: False
+now = 2020-06-29 14:51:26.461877 
+
+date 2020-06-29 14:50
+Upper_band: 119.2877 
+Lower_band: 118.9738 
+Middle_band : 119.1307
+Current close price : 119.06 
+Previous close price : 119.06
+Down Trend : True 
+Up Trend : False
+Changed Trend:  False
+Lower band range: 0.0007245292661073712
+Buy now
+Buy at 119.06
+stock hold: True
+now = 2020-06-29 14:56:59.115016 
+
+date 2020-06-29 14:55
+Upper_band: 119.2766 
+Lower_band: 118.9748 
+Middle_band : 119.1257
+Current close price : 119.15 
+Previous close price : 119.15
+Down Trend : False 
+Up Trend : True
+Changed Trend:  False
+Upper band range:  0.0010613984637388748
+Sell Now
+sell at 119.15
+stock hold: False
+now = 2020-06-29 15:02:35.443685 
+
+date 2020-06-29 15:00
+Upper_band: 119.2634 
+Lower_band: 119.0102 
+Middle_band : 119.1368
+Current close price : 119.1109 
+Previous close price : 119.1109
+Down Trend : True 
+Up Trend : False
+Changed Trend:  False
+Lower band range: 0.0008461459605983634
+Buy now
+Buy at 119.1109
+stock hold: True
+now = 2020-06-29 15:08:06.352553 
+
+date 2020-06-29 15:05
+Upper_band: 119.266 
+Lower_band: 118.9876 
+Middle_band : 119.1268
+Current close price : 119.04 
+Previous close price : 119.04
+Down Trend : True 
+Up Trend : False
+Changed Trend:  False
+Lower band range: 0.00044038202300076455
+You are holding stock now
+now = 2020-06-29 15:13:38.610764 
+
+date 2020-06-29 15:10
+Upper_band: 119.2296 
+Lower_band: 118.9985 
+Middle_band : 119.1141
+Current close price : 119.12 
+Previous close price : 119.12
+Down Trend : False 
+Up Trend : True
+Changed Trend:  False
+Upper band range:  0.0009192348208834078
+Sell Now
+sell at 119.12
+stock hold: False
+now = 2020-06-29 15:19:09.537251 
+
+date 2020-06-29 15:15
+Upper_band: 119.2057 
+Lower_band: 118.9905 
+Middle_band : 119.0981
+Current close price : 119.04 
+Previous close price : 119.04
+Down Trend : True 
+Up Trend : False
+Changed Trend:  False
+Lower band range: 0.00041599959660652727
+Buy now
+Buy at 119.04
+stock hold: True
+now = 2020-06-29 15:24:41.033428 
+
+Traceback (most recent call last):
+  File "bband.py", line 150, in <module>
+    runThis()
+  File "bband.py", line 141, in runThis
+    returnResult = bband(stockHold)
+  File "bband.py", line 23, in bband
+    bbandObj  = json.loads(allbbandprice.content.decode("utf-8"))
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/json/__init__.py", line 357, in loads
+    return _default_decoder.decode(s)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+KaiXuans-MBP:Pineapples kaixuanchin$ python3 bband.py
+now = 2020-06-29 15:30:49.117800 
+
+date 2020-06-29 15:30
+Upper_band: 119.3495 
+Lower_band: 118.9561 
+Middle_band : 119.1528
+Current close price : 119.3 
+Previous close price : 119.3
+Down Trend : False 
+Up Trend : True
+Changed Trend:  False
+Upper band range:  0.00041474828130833377
+You dont hold any stock
+now = 2020-06-29 15:36:19.930085 
+
+date 2020-06-29 15:35
+Upper_band: 119.4327 
+Lower_band: 118.9173 
+Middle_band : 119.175
+Current close price : 119.43 
+Previous close price : 119.43
+Down Trend : False 
+Up Trend : True
+Changed Trend:  False
+Upper band range:  2.2606873996737535e-05
+You dont hold any stock
+now = 2020-06-29 15:41:51.166568 
+
+date 2020-06-29 15:40
+Upper_band: 119.447 
+Lower_band: 118.945 
+Middle_band : 119.196
+Current close price : 119.27 
+Previous close price : 119.27
+Down Trend : False 
+Up Trend : True
+Changed Trend:  False
+Upper band range:  0.0014818287608730793
+You dont hold any stock
+now = 2020-06-29 15:47:21.974567 
+
+date 2020-06-29 15:45
+Upper_band: 119.4504 
+Lower_band: 118.8926 
+Middle_band : 119.1715
+Current close price : 118.97 
+Previous close price : 118.97
+Down Trend : True 
+Up Trend : False
+Changed Trend:  False
+Lower band range: 0.0006510077162077139
+Buy now
+Buy at 118.97
+stock hold: True
+now = 2020-06-29 15:52:52.786875 
+
+date 2020-06-29 15:50
+Upper_band: 119.4874 
+Lower_band: 118.7952 
+Middle_band : 119.1413
+Current close price : 118.82 
+Previous close price : 118.82
+Down Trend : True 
+Up Trend : False
+Changed Trend:  False
+Lower band range: 0.00020876264360848793
+You are holding stock now
+now = 2020-06-29 15:58:23.662592 
+
+date 2020-06-29 15:55
+Upper_band: 119.5174 
+Lower_band: 118.8242 
+Middle_band : 119.1708
+Current close price : 119.305 
+Previous close price : 119.305
+Down Trend : False 
+Up Trend : True
+Changed Trend:  False
+Upper band range:  0.001777147093226494
+Sell Now
+sell at 119.305
+stock hold: False
+now = 2020-06-29 16:03:54.404072 
+
+date 2020-06-29 16:00
+Upper_band: 119.734 
+Lower_band: 118.7337 
+Middle_band : 119.2339
+Current close price : 119.77 
+Previous close price : 119.77
+Down Trend : False 
+Up Trend : False
+Changed Trend:  False
+^CTraceback (most recent call last):
+  File "bband.py", line 150, in <module>
+    runThis()
+  File "bband.py", line 146, in runThis
+    time.sleep(330)
+KeyboardInterrupt
+
+KaiXuans-MBP:Pineapples kaixuanchin$ 

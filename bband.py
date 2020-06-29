@@ -2,10 +2,12 @@
 from requests import get
 import json
 from currentPrice import getCurrentPrice
+import time
+from datetime import datetime
 
 
-def bband():
-    symbol = "BF-B" 
+def bband(stockHold):
+    symbol = "IBM" 
     function = "BBANDS"
     interval = "5min"
     time_period = 10 
@@ -40,9 +42,9 @@ def bband():
     #get the close price for every 5 mins
     currentClosePrice = getCurrentPrice(symbol, interval , "4. close" , api_key)
     prevClosePrice = currentClosePrice
-    print(f"Current close price : {currentClosePrice} \nPrevious close price : {prevClosePrice} \n ")
+    print(f"Current close price : {currentClosePrice} \nPrevious close price : {prevClosePrice}")
 
-    stockHold = True 
+    # stockHold = False
     uptrend = False 
     downtrend = False 
     changingTrend = False
@@ -65,68 +67,88 @@ def bband():
         downtrend = False 
     else:
         pass
-
-    #save the trend here!! At this point the current trend will become a prev trend when keep getting new data 
-    if downtrend == True:
-        prev_trend = "downtrend"
-    elif uptrend == True:
-        prev_trend = "uptrend" 
-    elif changingTrend == True: 
-        #runn chainging trend function 
-
     print(f"Down Trend : {downtrend} \nUp Trend : {uptrend}\nChanged Trend:  {changingTrend}")
+
     
-    falls = 0 
+    
     #downtrend: need to find the double low and then buy 
     if downtrend == True:
-        print("In the downtrend block")
         # entry point
-        if falls == 2 and stockHold == True:
-            print("Buy Now")
-        else:
-            pass
+        # -----> Here is start my better entry point <-------
+        # # if my prev_trend is changed , then I am from a changing point to a downtrend 
+        #falls = 0 
+        # if falls == 2 and stockHold == True:
+        #     print("Buy Now")
+        # else:
+        #     pass
     
-        # check for my double low 
-        if currentClosePrice < prevClosePrice: 
-            falls += 1 
-            prevClosePrice = currentClosePrice 
-        else: 
-            pass 
+        # # check for my double low 
+        # if currentClosePrice < prevClosePrice: 
+        #     falls += 1 
+        #     prevClosePrice = currentClosePrice 
+        # else: 
+        #     pass 
+        # -----> Here is the end of better entry point  <------
 
+        #lower_band_range is to check that if the current price is touching the band 
+        lower_band_range = abs(((currentClosePrice - lower_band) / lower_band ) )
+
+        if lower_band_range < 0.002:
+            print("Lower band range:", lower_band_range)
+            if stockHold == False:
+                print("Buy now")
+                print(f"Buy at {currentClosePrice}")
+                stockHold = True
+                print(f"stock hold: {stockHold}")
+            else:
+                print("You are holding stock now")
+        else: 
+            print("not a good time to buy")
+            
+        
 
     #uptrend : if the current price is in the range of the upper_band , then sell
     if uptrend == True: 
         upper_band_range = abs(((currentClosePrice - upper_band) / upper_band ) )
         print("Upper band range: " , upper_band_range)
+        # if my prev_trend is changed ,then this is from somewhere to a uptrend 
         if upper_band_range < 0.002:  
             if stockHold == True:
                 print("Sell Now")
-                stockHold = False 
+                print(f"sell at {currentClosePrice}")
+                stockHold = False
+                print(f"stock hold: {stockHold}") 
             else: 
                 print("You dont hold any stock")
         else: 
-            print("Not in the selling range yet ") 
-    
-
-    
-# changing point: this is check if we are holding the stock are going to uptrend or donwtrend.
-#if at this point we are still in downtrend , sell the stock 
-# if at this point we are keep going the uptrend , we can keep holding it until we reach the upper band  
-# this chaning trend function will tell us that if it is a   
-#def changingTrend(prev_trend, stockHold, )
-
-
-# def runThis():
-#     downtrend = bband() #true or false
-#     falls = 0
-#     while (True):
-#         bband()
-
-
+            print("Not in the selling range yet") 
+    return stockHold 
 
 
     
+    # changing point: this is check if we are holding the stock are going to uptrend or donwtrend.
+    #if at this point we are still in downtrend , sell the stock 
+    # if at this point we are keep going the uptrend , we can keep holding it until we reach the upper band  
+
+
+
+
+def runThis():
+    stockHold = False
+    totalAmount = 500.0 
+    profit = 0.0
+    stockOwn = 0.0 
+
+    while True:
+        now = datetime.now()
+        print(f"now = {now} \n")
+        returnResult = bband(stockHold)
+        if returnResult == True: 
+            stockHold = True 
+        else:
+            stockHold = False 
+        time.sleep(330)
 
 
 if __name__ == '__main__':
-   bband()
+   runThis()
